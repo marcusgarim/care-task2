@@ -7,17 +7,18 @@
     <title>Docli - Plataforma de IAs Integradas para Saúde</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-
 </head>
 
 <body>
     <!-- Navigation -->
     <nav>
         <div class="nav-container">
-            <a href="#" class="logo">Docli</a>
+            <a href="#" class="logo">
+                <img src="public/logo-care.svg" alt="Docli Logo">
+            </a>
             <div class="nav-links">
                 <a href="#inicio">Início</a>
                 <a href="#solucoes">Soluções</a>
@@ -37,6 +38,10 @@
 
     <!-- Hero Section -->
     <section class="hero" id="inicio">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="public/background-1.mp4" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
         <div class="neural-network"></div>
         <div class="hero-content">
             <h1>Uma nova era de <span>soluções tecnológicas</span> para a saúde.</h1>
@@ -296,11 +301,14 @@
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">Docli</div>
+            <div class="footer-logo">
+                <img src="public/logo-care.svg" alt="Docli Logo">
+            </div>
             <p class="footer-text">© 2025 Docli. Todos os direitos reservados. | Plataforma de IAs Integradas para Saúde
             </p>
         </div>
     </footer>
+
     <script src="app.js"></script>
 
 </body>
