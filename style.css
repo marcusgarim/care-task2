@@ -444,7 +444,10 @@ nav {
     padding: 3rem;
     background: var(--bg-card);
     border-radius: 16px;
-    border: 1px solid var(--border);
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient-border);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -513,7 +516,10 @@ nav {
     margin: 0 auto;
     background: var(--bg-card);
     border-radius: 16px;
-    border: 1px solid var(--border);
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient-border);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     padding: 3rem;
     position: relative;
     overflow: hidden;
@@ -547,6 +553,12 @@ nav {
     font-size: 2.5rem;
     margin: 0 auto 1rem;
     transition: all 0.3s ease;
+}
+
+.flow-icon img {
+    width: 42px;
+    height: 42px;
+    filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(116deg) brightness(97%) contrast(97%);
 }
 
 .flow-step:hover .flow-icon {
@@ -674,7 +686,7 @@ nav {
 
 .chart-bar span {
     position: absolute;
-    top: -30px;
+    top: -35px;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
@@ -683,7 +695,7 @@ nav {
 
 .chart-label {
     position: absolute;
-    bottom: -30px;
+    bottom: -35px;
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.875rem;
@@ -738,6 +750,13 @@ nav {
 .about-content {
     max-width: 800px;
     margin: 0 auto;
+    background: var(--bg-card);
+    border-radius: 16px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient-border);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    padding: 3rem;
 }
 
 .about-content p {
@@ -765,8 +784,11 @@ nav {
     margin: 0 auto;
     background: var(--bg-card);
     border-radius: 16px;
+    border: 2px solid transparent;
+    background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient-border);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
     padding: 3rem;
-    border: 1px solid var(--border);
 }
 
 .form-group {

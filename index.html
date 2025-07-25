@@ -127,28 +127,36 @@
 
             <div class="flow-diagram">
                 <div class="flow-step">
-                    <div class="flow-icon">🗣️</div>
+                    <div class="flow-icon">
+                        <img src="public/fala.svg" alt="Fala">
+                    </div>
                     <h4>Fala</h4>
                     <p>Médico fala durante consulta</p>
                     <span class="flow-connector">→</span>
                 </div>
 
                 <div class="flow-step">
-                    <div class="flow-icon">📝</div>
+                    <div class="flow-icon">
+                        <img src="public/texto.svg" alt="Texto">
+                    </div>
                     <h4>Texto</h4>
                     <p>Voice transcreve automaticamente</p>
                     <span class="flow-connector">→</span>
                 </div>
 
                 <div class="flow-step">
-                    <div class="flow-icon">📊</div>
+                    <div class="flow-icon">
+                        <img src="public/dados.svg" alt="Dados">
+                    </div>
                     <h4>Dado</h4>
                     <p>Data estrutura informações</p>
                     <span class="flow-connector">→</span>
                 </div>
 
                 <div class="flow-step">
-                    <div class="flow-icon">🎯</div>
+                    <div class="flow-icon">
+                        <img src="public/decisao.svg" alt="Decisão">
+                    </div>
                     <h4>Decisão</h4>
                     <p>LiviaMed sugere condutas</p>
                 </div>
@@ -309,7 +317,147 @@
         </div>
     </footer>
 
-    <script src="app.js"></script>
+    <script>
+        // Aguardar o DOM carregar completamente
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // Smooth scrolling melhorado
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('nav').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        // Smooth scroll nativo
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // Neural network animation
+            function createNeuralNetwork() {
+                const network = document.querySelector('.neural-network');
+                if (!network) return;
+                
+                const nodeCount = 20;
+
+                for (let i = 0; i < nodeCount; i++) {
+                    const node = document.createElement('div');
+                    node.classList.add('neural-node');
+                    node.style.left = `${Math.random() * 100}%`;
+                    node.style.top = `${Math.random() * 100}%`;
+                    node.style.animationDelay = `${Math.random() * 3}s`;
+                    network.appendChild(node);
+                }
+            }
+
+            // Inicializar rede neural
+            createNeuralNetwork();
+
+            // Animate on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -100px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+
+            // Observe elements for scroll animations
+            document.querySelectorAll('.solution-card, .diff-item, .flow-step').forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(30px)';
+                el.style.transition = 'all 0.6s ease';
+                observer.observe(el);
+            });
+
+            // Form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    e.preventDefault();
+                    
+                    // Animação de feedback
+                    const submitBtn = this.querySelector('.btn-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.style.opacity = '0.7';
+                    
+                    // Simular envio
+                    setTimeout(() => {
+                        alert('Obrigado pelo contato! Entraremos em contato em breve.');
+                        this.reset();
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.opacity = '1';
+                    }, 1000);
+                });
+            }
+
+            // Mobile menu toggle
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', function () {
+                    navLinks.classList.toggle('active');
+                    
+                    // Animação do botão hamburger
+                    this.classList.toggle('active');
+                });
+                
+                // Fechar menu mobile ao clicar nos links
+                navLinks.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                    });
+                });
+            }
+
+            // Highlight do menu ativo baseado na seção visível
+            const sections = document.querySelectorAll('section[id]');
+            const navLinksArray = document.querySelectorAll('.nav-links a[href^="#"]');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollPosition = window.pageYOffset + 200;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition <= sectionTop + sectionHeight) {
+                        current = section.getAttribute('id');
+                    }
+                });
+                
+                // Destacar link ativo no menu
+                navLinksArray.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${current}`) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            console.log('🚀 Docli website loaded successfully!');
+        });
+    </script>
 
 </body>
 
