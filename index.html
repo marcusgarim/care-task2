@@ -172,31 +172,41 @@
 
         <div class="differentials-grid">
             <div class="diff-item">
-                <div class="diff-icon">🩺</div>
+                <div class="diff-icon">
+                    <img src="public/curadoria.svg" alt="Curadoria médica">
+                </div>
                 <h3>Curadoria médica e científica</h3>
                 <p>Conteúdo revisado por especialistas brasileiros</p>
             </div>
 
             <div class="diff-item">
-                <div class="diff-icon">🎯</div>
+                <div class="diff-icon">
+                    <img src="public/acuracia.svg" alt="Acurácia">
+                </div>
                 <h3>Acurácia comprovada (>99%)</h3>
                 <p>Precisão superior em testes clínicos reais</p>
             </div>
 
             <div class="diff-item">
-                <div class="diff-icon">🇧🇷</div>
+                <div class="diff-icon">
+                    <img src="public/brasileira.svg" alt="Brasil">
+                </div>
                 <h3>IA adaptada à realidade brasileira</h3>
                 <p>Protocolos e condutas nacionais</p>
             </div>
 
             <div class="diff-item">
-                <div class="diff-icon">🔌</div>
+                <div class="diff-icon">
+                    <img src="public/integracao.svg" alt="Integração">
+                </div>
                 <h3>Integração com qualquer sistema</h3>
                 <p>APIs robustas e documentadas</p>
             </div>
 
             <div class="diff-item">
-                <div class="diff-icon">🔒</div>
+                <div class="diff-icon">
+                    <img src="public/seguranca.svg" alt="Segurança">
+                </div>
                 <h3>Segurança e compliance</h3>
                 <p>LGPD, HIPAA e certificações médicas</p>
             </div>
@@ -214,16 +224,16 @@
                 <h3 style="margin-bottom: 1rem;">Desempenho no MedQA</h3>
                 <div class="chart-bars">
                     <div class="chart-bar" style="height: 90%;">
-                        <span>93%</span>
-                        <span class="chart-label">LiviaMed</span>
+                        <span>ㅤ</span>
+                        <span class="chart-label">LiviaMed - 93%</span>
                     </div>
                     <div class="chart-bar" style="height: 85%; background: #3b82f6;">
-                        <span>89%</span>
-                        <span class="chart-label">GPT-4</span>
+                        <span>ㅤ</span>
+                        <span class="chart-label">GPT-4 - 89%</span>
                     </div>
                     <div class="chart-bar" style="height: 78%; background: #64748b;">
-                        <span>81%</span>
-                        <span class="chart-label">MedPaLM</span>
+                        <span>ㅤ</span>
+                        <span class="chart-label">MedPaLM - 81%</span>
                     </div>
                 </div>
             </div>
@@ -277,43 +287,85 @@
     <!-- Contact Section -->
     <section class="contact" id="contato">
         <div class="section-header">
-            <h2>Quero conhecer a Docli</h2>
+            <h2>Revolucione a Experiência Clínica: O Futuro Começa com Seu Contato!</h2>
             <p>Entre em contato e descubra como podemos transformar sua prática médica</p>
         </div>
 
         <form class="contact-form">
             <div class="form-group">
-                <label for="nome">Nome</label>
+                <label for="nome">Nome<span class="required">*</span></label>
                 <input type="text" id="nome" name="nome" required>
             </div>
 
             <div class="form-group">
-                <label for="empresa">Empresa</label>
-                <input type="text" id="empresa" name="empresa" required>
+                <label for="telefone">Telefone<span class="required">*</span></label>
+                <input type="tel" id="telefone" name="telefone" required>
             </div>
 
             <div class="form-group">
-                <label for="email">Email</label>
+                <label for="email">Email<span class="required">*</span></label>
                 <input type="email" id="email" name="email" required>
             </div>
 
             <div class="form-group">
-                <label for="mensagem">Mensagem</label>
+                <label for="empresa">Empresa<span class="required">*</span></label>
+                <input type="text" id="empresa" name="empresa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="mensagem">Mensagem<span class="required">*</span></label>
                 <textarea id="mensagem" name="mensagem" required></textarea>
             </div>
 
-            <button type="submit" class="btn-submit">Quero conhecer a Docli</button>
+            <button type="submit" class="btn-submit">
+                Falar conosco
+                <span class="arrow-icon">↗</span>
+            </button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
         <div class="footer-content">
-            <div class="footer-logo">
-                <img src="public/logo-care.svg" alt="Docli Logo">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img src="public/logo-care.svg" alt="Docli Logo">
+                    </div>
+                    <p class="footer-description">Impulsionando inovações que serão aplicadas na prática não só no país como em instituições de saúde de todo mundo.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <img src="public/facebook.svg" alt="Facebook" class="social-icon">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="public/instagram.svg" alt="Instagram" class="social-icon">
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-nav">
+                    <div class="footer-column">
+                        <a href="#sobre">Sobre a Docli.</a>
+                        <a href="#solucoes">Nossos Serviços.</a>
+                        <a href="#resultados">Marcas.</a>
+                        <a href="#contato">Contato.</a>
+                    </div>
+                </div>
+
+                <div class="footer-contact">
+                    <h4>Contato</h4>
+                    <p>+55 (51) 98176-7734</p>
+                    <p>contato@docli.com.br</p>
+                    
+                    <h4>Localização</h4>
+                    <p>Av. Dr Nilo Peçanha, 1600</p>
+                    <p>Boa Vista - Porto Alegre</p>
+                </div>
             </div>
-            <p class="footer-text">© 2025 Docli. Todos os direitos reservados. | Plataforma de IAs Integradas para Saúde
-            </p>
+
+            <div class="footer-bottom">
+                <p>© 2025 — Docli Todos os direitos reservados</p>
+            </div>
         </div>
     </footer>
 
@@ -454,8 +506,6 @@
                     }
                 });
             });
-
-            console.log('🚀 Docli website loaded successfully!');
         });
     </script>
 
