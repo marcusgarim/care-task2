@@ -1034,6 +1034,16 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
+    /* Esconder as setas de integração no mobile */
+    .integration-arrow {
+        display: none;
+    }
+    
+    /* Ajustar o gap dos nós para compensar a ausência das setas */
+    .integration-visual {
+        gap: 1.5rem;
+    }
+
     .nav-links {
         display: none;
         position: fixed;
