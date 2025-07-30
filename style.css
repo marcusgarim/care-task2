@@ -455,6 +455,16 @@ nav {
     overflow: hidden;
 }
 
+.integration-title {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+.integration-description {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
 .integration-visual {
     display: flex;
     justify-content: center;
@@ -508,13 +518,13 @@ nav {
 
 /* Playground Section */
 .playground {
-    padding: 6rem 2rem;
+    padding: 4rem 2rem;
     background: var(--bg-dark);
     position: relative;
 }
 
 .playground-demo {
-    max-width: 1280px;
+    max-width: 1000px;
     margin: 0 auto;
     background: var(--bg-card);
     border-radius: 16px;
@@ -522,44 +532,50 @@ nav {
     background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient-border);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    padding: 3rem;
+    padding: 2rem;
     position: relative;
     overflow: hidden;
+}
+
+.playground-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .flow-diagram {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
-    margin-top: 3rem;
+    gap: 1.5rem;
+    margin-top: 2rem;
     flex-wrap: wrap;
 }
 
 .flow-step {
     flex: 1;
-    min-width: 200px;
+    min-width: 180px;
     text-align: center;
     position: relative;
 }
 
 .flow-icon {
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     background: rgba(231, 79, 16, 0.1);
     border: 2px solid var(--primary);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 2.5rem;
-    margin: 0 auto 1rem;
+    font-size: 2rem;
+    margin: 0 auto 0.8rem;
     transition: all 0.3s ease;
 }
 
 .flow-icon img {
-    width: 30px;
-    height: 30px;
+    width: 24px;
+    height: 24px;
     filter: brightness(0) saturate(100%) invert(100%) sepia(0%) saturate(7500%) hue-rotate(116deg) brightness(97%) contrast(97%);
 }
 
@@ -569,23 +585,23 @@ nav {
 }
 
 .flow-step h4 {
-    font-size: 1.125rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 0.4rem;
     color: var(--text-primary);
     font-weight: 500;
 }
 
 .flow-step p {
-    font-size: 0.875rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
 }
 
 .flow-connector {
     position: absolute;
-    top: 50px;
-    right: -40px;
+    top: 40px;
+    right: -30px;
     color: var(--primary);
-    font-size: 2rem;
+    font-size: 1.5rem;
     animation: pulse 2s ease-in-out infinite;
 }
 
@@ -647,7 +663,7 @@ nav {
     font-size: 0.95rem;
 }
 
-/* Results Section */
+/* Results Section - FIXED EQUAL HEIGHTS */
 .results {
     padding: 6rem 2rem;
     background: var(--bg-dark);
@@ -659,24 +675,51 @@ nav {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: center;
+    align-items: stretch;
 }
 
-.chart-container {
+.chart-container,
+.comparison-table {
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
     background: var(--bg-card);
     border-radius: 16px;
-    padding: 2rem;
     border: 1px solid var(--border);
     position: relative;
     overflow: hidden;
+}
+
+.chart-container {
+    padding: 2rem;
+    justify-content: flex-start;
+}
+
+.chart-header {
+    flex-shrink: 0;
+    margin-bottom: 2rem;
+}
+
+.chart-header h3 {
+    margin-bottom: 0;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+}
+
+.chart-content {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
 }
 
 .chart-bars {
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
-    height: 300px;
-    margin-top: 2rem;
+    height: 280px;
+    width: 100%;
 }
 
 .chart-bar {
@@ -688,17 +731,32 @@ nav {
     cursor: pointer;
 }
 
+.chart-bar-livia {
+    height: 90%;
+}
+
+.chart-bar-gpt {
+    height: 85%;
+    background: #3b82f6;
+}
+
+.chart-bar-med {
+    height: 78%;
+    background: #64748b;
+}
+
 .chart-bar:hover {
     transform: scaleY(1.05);
 }
 
-.chart-bar span {
+.chart-value {
     position: absolute;
     top: -35px;
     left: 50%;
     transform: translateX(-50%);
     font-weight: 700;
     color: var(--primary);
+    font-size: 0.9rem;
 }
 
 .chart-label {
@@ -707,33 +765,54 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.875rem;
-    color: var(--text-secondary);
+    color: var(--primary);;
     white-space: nowrap;
 }
 
 .comparison-table {
-    background: var(--bg-card);
-    border-radius: 16px;
-    overflow: hidden;
-    border: 1px solid var(--border);
+    padding: 0;
+    justify-content: center;
+}
+
+.table-wrapper {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
 }
 
 .comparison-table table {
     width: 100%;
     border-collapse: collapse;
+    height: 100%;
+}
+
+.comparison-table thead {
+    flex-shrink: 0;
+}
+
+.comparison-table tbody {
+    flex-grow: 1;
 }
 
 .comparison-table th,
 .comparison-table td {
-    padding: 1rem;
+    padding: 1.2rem 1rem;
     text-align: center;
     border-bottom: 1px solid var(--border);
+    line-height: 1.4;
 }
 
 .comparison-table th {
     background: var(--bg-darker);
     font-weight: 600;
     color: var(--primary);
+    font-size: 1rem;
+}
+
+.comparison-table td {
+    font-size: 0.95rem;
 }
 
 .comparison-table tr:hover {
@@ -742,10 +821,12 @@ nav {
 
 .check-icon {
     color: #4ade80;
+    font-size: 1.2rem;
 }
 
 .x-icon {
     color: #ef4444;
+    font-size: 1.2rem;
 }
 
 /* About Section */
@@ -765,6 +846,11 @@ nav {
     background-origin: border-box;
     background-clip: padding-box, border-box;
     padding: 3rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .about-content p {
@@ -789,7 +875,6 @@ nav {
     overflow: hidden;
 }
 
-/* Background image effect for contact section */
 .contact::before {
     content: '';
     position: absolute;
@@ -826,7 +911,7 @@ nav {
     margin-bottom: 0;
 }
 
-.form-group:nth-child(5) {
+.form-group-full {
     grid-column: 1 / -1;
 }
 
@@ -1034,12 +1119,10 @@ footer {
 
 /* Responsive */
 @media (max-width: 768px) {
-    /* Esconder as setas de integração no mobile */
     .integration-arrow {
         display: none;
     }
     
-    /* Ajustar o gap dos nós para compensar a ausência das setas */
     .integration-visual {
         gap: 1.5rem;
     }
@@ -1096,6 +1179,16 @@ footer {
 
     .results-content {
         grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .chart-container,
+    .comparison-table {
+        min-height: 350px;
+    }
+
+    .chart-bars {
+        height: 220px;
     }
 
     .flow-diagram {
@@ -1123,7 +1216,6 @@ footer {
         gap: 2rem;
     }
 
-    /* Diferentials mobile - 2 colunas em telas pequenas */
     .differentials-grid {
         grid-template-columns: 1fr 1fr;
         gap: 1.5rem;
@@ -1132,6 +1224,28 @@ footer {
     .diff-item:last-child {
         grid-column: 1 / -1;
         justify-self: center;
+    }
+
+    .playground {
+        padding: 3rem 1rem;
+    }
+
+    .playground-demo {
+        padding: 1.5rem;
+    }
+
+    .flow-step {
+        min-width: 120px;
+    }
+
+    .flow-icon {
+        width: 60px;
+        height: 60px;
+    }
+
+    .flow-icon img {
+        width: 20px;
+        height: 20px;
     }
 }
 
@@ -1155,5 +1269,30 @@ footer {
     .footer-main {
         grid-template-columns: 2fr 1fr;
         gap: 2rem;
+    }
+
+    .playground {
+        padding: 3.5rem 2rem;
+    }
+
+    .playground-demo {
+        max-width: 900px;
+    }
+
+    .flow-step {
+        min-width: 160px;
+    }
+
+    .results-content {
+        gap: 3rem;
+    }
+
+    .chart-container,
+    .comparison-table {
+        min-height: 400px;
+    }
+
+    .chart-bars {
+        height: 240px;
     }
 }
