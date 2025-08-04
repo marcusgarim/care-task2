@@ -23,6 +23,7 @@ html {
     --gradient-orange: linear-gradient(135deg, #E74F10 0%, #ff8c42 100%);
     --gradient-border: linear-gradient(100deg, #CD4100 0%, #EE8F70 52%, #FFCC89 100%);
     --gradient-dark: linear-gradient(180deg, #0a0a0a 0%, #141414 100%);
+    --orange-gradient-border: linear-gradient(90deg, #E74F10 0%, #F69571 50%, #E74F10 100%);
 }
 
 body {
@@ -516,6 +517,526 @@ nav {
     }
 }
 
+/* Livia Med Section */
+.livia-med {
+    padding: 6rem 2rem;
+    background: #000000;
+    position: relative;
+    overflow: hidden;
+}
+
+.livia-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    position: relative;
+}
+
+.livia-content {
+    width: 471px;
+    height: 457px;
+    position: relative;
+    flex: none;
+}
+
+.livia-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.livia-brand {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 160%;
+    text-align: center;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.livia-white {
+    color: #FFFFFF;
+}
+
+.livia-gradient {
+    background: linear-gradient(90deg, #7C7CF8 0%, #E4677B 50%, #F69571 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 300;
+}
+
+.livia-main {
+    position: absolute;
+    top: 51px;
+    left: 0;
+    width: 471px;
+    height: 406px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.livia-title {
+    width: 471px;
+    height: 132px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 33.3333px;
+    line-height: 133%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+    margin: 0;
+    flex: none;
+    align-self: stretch;
+}
+
+.livia-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 29px;
+    width: 411px;
+    height: 147px;
+}
+
+.livia-badge {
+    width: 411px;
+    height: 22px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    flex: none;
+    align-self: stretch;
+}
+
+.bracket {
+    background: linear-gradient(90deg, #7C7CF8 0%, #E4677B 50%, #F69571 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+.livia-description {
+    width: 411px;
+    height: 96px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 160%;
+    letter-spacing: -0.02em;
+    color: #CFD0D0;
+    margin: 0;
+    flex: none;
+}
+
+.livia-cta {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 241px;
+    height: 56px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 8px 8px 24px;
+    gap: 24px;
+    background: linear-gradient(90deg, #7C7CF8 0%, #E4677B 50%, #F69571 100%);
+    border-radius: 900px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.livia-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(124, 124, 248, 0.3);
+}
+
+.livia-cta span {
+    width: 145px;
+    height: 22px;
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+    flex: none;
+    flex-grow: 0;
+}
+
+.cta-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px;
+    gap: 8px;
+    width: 40px;
+    height: 40px;
+    background: #FFFFFF;
+    border-radius: 90px;
+    flex: none;
+    flex-grow: 0;
+}
+
+.livia-video {
+    width: 825px;
+    height: 484px;
+    flex: none;
+    flex-grow: 0;
+    position: relative;
+}
+
+.video-placeholder {
+    position: absolute;
+    width: 819px;
+    height: 484px;
+    left: 0;
+    top: 0;
+    background: #0C0C0C;
+    border-radius: 24px 0px 0px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-placeholder span {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: #FFFFFF;
+}
+
+/* Docli Pilot Section */
+.docli-pilot {
+    background: var(--bg-darker);
+    padding: 6rem 2rem;
+    position: relative;
+}
+
+.docli-pilot-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Novo layout de duas colunas */
+.docli-pilot-main {
+    display: flex;
+    gap: 4rem;
+    align-items: flex-start;
+    margin-bottom: 3rem;
+}
+
+.docli-pilot-content {
+    flex: 1;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.docli-pilot-header {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.docli-pilot-logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.docli-pilot-logo img {
+    height: 51px;
+    width: auto;
+}
+
+.docli-pilot-text {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 23px;
+    line-height: 120%;
+    color: var(--text-primary);
+}
+
+.docli-pilot-badges {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.docli-badge {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--text-primary);
+}
+
+.docli-badge .bracket {
+    color: var(--primary);
+    background: none !important;
+    -webkit-background-clip: unset !important;
+    -webkit-text-fill-color: unset !important;
+    background-clip: unset !important;
+    text-fill-color: unset !important;
+}
+
+.docli-pilot-title {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.docli-pilot-features {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.docli-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    flex: 1;
+    min-width: 250px;
+}
+
+.feature-dot {
+    width: 12px;
+    height: 12px;
+    background: var(--primary);
+    border: 2px solid var(--text-primary);
+    border-radius: 12px;
+    box-shadow: 0px 0px 4px 2px rgba(231, 79, 16, 0.8), 0px 0px 20px 12px rgba(231, 79, 16, 0.5);
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+}
+
+.docli-feature p {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 160%;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+.docli-pilot-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.docli-btn {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(13.25px);
+    border: 2px solid transparent;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.02)), var(--orange-gradient-border);
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+    border-radius: 900px;
+    padding: 12px 24px;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: var(--text-primary);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 200px;
+}
+
+.docli-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+.docli-pilot-mockup {
+    flex: 1;
+    max-width: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.docli-pilot-mockup img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 24px;
+}
+
+
+
+.chat-card {
+    background: var(--text-primary);
+    border: 1px solid #F2F5F4;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 14px 27px 45px 4px rgba(112, 144, 176, 0.2);
+    max-width: 343px;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.chat-avatar {
+    width: 38px;
+    height: 38px;
+    background: #F4F4F4;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.avatar-icon {
+    width: 22px;
+    height: 25px;
+    background: linear-gradient(135deg, #3483FF 0%, #99C1FF 100%);
+    border-radius: 2px;
+    position: relative;
+}
+
+.avatar-icon::before {
+    content: '';
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    width: 50%;
+    height: 50%;
+    background: #3483FF;
+    border-radius: 1px;
+}
+
+.chat-info {
+    flex: 1;
+}
+
+.chat-info h4 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 160%;
+    color: #212927;
+    margin: 0 0 0.25rem 0;
+}
+
+.chat-status {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    color: #909695;
+}
+
+.chat-indicators {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.waveform {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    background: #0F864B;
+    border-radius: 45px;
+    padding: 0.5rem;
+}
+
+.wave-bar {
+    width: 2px;
+    background: var(--text-primary);
+    border-radius: 1px;
+    animation: wave 1.5s ease-in-out infinite;
+}
+
+.wave-bar:nth-child(1) { height: 2px; animation-delay: 0s; }
+.wave-bar:nth-child(2) { height: 8px; animation-delay: 0.1s; }
+.wave-bar:nth-child(3) { height: 14px; animation-delay: 0.2s; }
+.wave-bar:nth-child(4) { height: 4px; animation-delay: 0.3s; }
+.wave-bar:nth-child(5) { height: 16px; animation-delay: 0.4s; }
+.wave-bar:nth-child(6) { height: 14px; animation-delay: 0.5s; }
+.wave-bar:nth-child(7) { height: 10px; animation-delay: 0.6s; }
+.wave-bar:nth-child(8) { height: 10px; animation-delay: 0.7s; }
+.wave-bar:nth-child(9) { height: 10px; animation-delay: 0.8s; }
+.wave-bar:nth-child(10) { height: 14px; animation-delay: 0.9s; }
+.wave-bar:nth-child(11) { height: 10px; animation-delay: 1s; }
+.wave-bar:nth-child(12) { height: 16px; animation-delay: 1.1s; }
+.wave-bar:nth-child(13) { height: 10px; animation-delay: 1.2s; }
+.wave-bar:nth-child(14) { height: 4px; animation-delay: 1.3s; }
+.wave-bar:nth-child(15) { height: 2px; animation-delay: 1.4s; }
+
+@keyframes wave {
+    0%, 100% { transform: scaleY(0.5); }
+    50% { transform: scaleY(1); }
+}
+
+.status-indicator {
+    width: 32px;
+    height: 32px;
+    background: #0F864B;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-message {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 160%;
+    color: #505755;
+    margin: 0;
+}
+
 /* Playground Section */
 .playground {
     padding: 4rem 2rem;
@@ -765,7 +1286,7 @@ nav {
     left: 50%;
     transform: translateX(-50%);
     font-size: 0.875rem;
-    color: var(--primary);;
+    color: var(--text-secondary);
     white-space: nowrap;
 }
 
@@ -829,42 +1350,135 @@ nav {
     font-size: 1.2rem;
 }
 
-/* About Section */
-.about {
-    padding: 6rem 2rem;
-    background: var(--bg-darker);
-    text-align: center;
+/* Testimonials Section */
+.testimonials {
+    padding: 80px;
+    background: #000000;
+    position: relative;
+    overflow-x: auto;
 }
 
-.about-content {
-    max-width: 800px;
+.testimonials-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 46px;
+    max-width: 1280px;
     margin: 0 auto;
+    min-width: fit-content;
+}
+
+.testimonial-card {
+    position: relative;
+    width: 396px;
+    height: 431px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 32px;
+    gap: 40px;
+    isolation: isolate;
+    overflow: hidden;
+    flex: none;
     background: var(--bg-card);
-    border-radius: 16px;
     border: 2px solid transparent;
     background-image: linear-gradient(var(--bg-card), var(--bg-card)), var(--gradient-border);
     background-origin: border-box;
     background-clip: padding-box, border-box;
-    padding: 3rem;
 }
 
-.about-title {
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
+.testimonial-background {
+    display: none;
 }
 
-.about-content p {
-    font-size: 1.25rem;
-    color: var(--text-secondary);
-    margin-bottom: 2rem;
-    line-height: 1.8;
+.testimonial-content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
 }
 
-.powered-by {
-    font-size: 0.875rem;
-    color: var(--text-muted);
-    margin-top: 1rem;
-    font-style: italic;
+.testimonial-quote {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 145%;
+    color: #FFFFFF;
+    margin: 0;
+    flex-grow: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+.testimonial-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+    margin-top: auto;
+}
+
+.testimonial-author h4 {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 120%;
+    color: #E74F10;
+    margin: 0 0 6px 0;
+}
+
+.testimonial-author span {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 120%;
+    color: #FFFFFF;
+}
+
+.testimonial-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+    gap: 8px;
+    width: 141px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.testimonial-link:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.testimonial-link span {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    color: #FFFFFF;
+    white-space: nowrap;
+}
+
+.testimonial-link svg {
+    width: 18px;
+    height: 18px;
+    color: #FFFFFF;
 }
 
 /* Contact Section */
@@ -1247,6 +1861,181 @@ footer {
         width: 20px;
         height: 20px;
     }
+
+    /* Testimonials mobile */
+    .testimonials {
+        padding: 40px 20px;
+        background: #000000;
+    }
+
+    .testimonials-container {
+        flex-direction: column;
+        gap: 40px;
+        overflow-x: visible;
+        max-width: 100%;
+    }
+
+    .testimonial-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 400px;
+    }
+
+    .testimonial-footer {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    .testimonial-link {
+        align-self: flex-start;
+    }
+
+    /* Livia Med mobile */
+    .livia-med {
+        padding: 40px 20px;
+    }
+
+    .livia-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .livia-content {
+        width: 100%;
+        height: auto;
+    }
+
+    .livia-header {
+        position: relative;
+        margin-bottom: 20px;
+    }
+
+    .livia-main {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .livia-title {
+        width: 100%;
+        height: auto;
+        font-size: 24px;
+        line-height: 130%;
+    }
+
+    .livia-info {
+        width: 100%;
+        height: auto;
+        gap: 15px;
+    }
+
+    .livia-badge {
+        width: 100%;
+        height: auto;
+        font-size: 12px;
+    }
+
+    .livia-description {
+        width: 100%;
+        height: auto;
+        font-size: 16px;
+        line-height: 150%;
+    }
+
+    .livia-cta {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 12px 20px;
+        justify-content: space-between;
+    }
+
+    .livia-cta span {
+        width: auto;
+        height: auto;
+        font-size: 14px;
+    }
+
+    .cta-icon {
+        width: 36px;
+        height: 36px;
+    }
+
+    .livia-video {
+        width: 100%;
+        height: 250px;
+    }
+
+    .video-placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 16px;
+    }
+
+    .video-placeholder span {
+        font-size: 20px;
+    }
+
+    /* Docli Pilot mobile */
+    .docli-pilot {
+        padding: 4rem 1rem;
+    }
+
+    .docli-pilot-container {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .docli-pilot-main {
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    .docli-pilot-content {
+        order: 2;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .docli-pilot-title {
+        font-size: 28px;
+    }
+
+    .docli-pilot-features {
+        gap: 1rem;
+    }
+
+    .docli-feature {
+        max-width: 100%;
+    }
+
+    .docli-feature p {
+        font-size: 16px;
+    }
+
+    .docli-pilot-buttons {
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .docli-btn {
+        font-size: 18px;
+        padding: 10px 20px;
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .docli-pilot-mockup {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
+    }
 }
 
 /* Tablet breakpoint */
@@ -1294,5 +2083,141 @@ footer {
 
     .chart-bars {
         height: 240px;
+    }
+
+    /* Testimonials tablet */
+    .testimonials {
+        padding: 60px 40px;
+        background: #1a1a1a;
+    }
+
+    .testimonials-container {
+        gap: 46px;
+        overflow-x: auto;
+        padding: 0 20px;
+        max-width: 1280px;
+    }
+
+    .testimonial-card {
+        min-width: 350px;
+    }
+
+    /* Livia Med tablet */
+    .livia-med {
+        padding: 60px 40px;
+    }
+
+    .livia-container {
+        flex-direction: column;
+        gap: 40px;
+        max-width: 100%;
+    }
+
+    .livia-content {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .livia-main {
+        position: relative;
+        top: 0;
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .livia-title {
+        width: 100%;
+        height: auto;
+        font-size: 28px;
+    }
+
+    .livia-info {
+        width: 100%;
+        height: auto;
+        gap: 20px;
+    }
+
+    .livia-badge {
+        width: 100%;
+        height: auto;
+    }
+
+    .livia-description {
+        width: 100%;
+        height: auto;
+        font-size: 18px;
+    }
+
+    .livia-cta {
+        position: relative;
+        width: auto;
+        height: auto;
+        align-self: flex-start;
+    }
+
+    .livia-video {
+        width: 100%;
+        height: 300px;
+    }
+
+    .video-placeholder {
+        width: 100%;
+        height: 100%;
+        border-radius: 24px;
+    }
+
+    /* Docli Pilot tablet */
+    .docli-pilot {
+        padding: 60px 40px;
+    }
+
+    .docli-pilot-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .docli-pilot-main {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .docli-pilot-content {
+        width: 100%;
+        max-width: 100%;
+        order: 2;
+    }
+
+    .docli-pilot-title {
+        font-size: 32px;
+    }
+
+    .docli-pilot-features {
+        gap: 1rem;
+    }
+
+    .docli-feature {
+        max-width: 100%;
+    }
+
+    .docli-feature p {
+        font-size: 16px;
+    }
+
+    .docli-pilot-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .docli-btn {
+        font-size: 20px;
+        padding: 10px 20px;
+    }
+
+    .docli-pilot-mockup {
+        order: 1;
+        width: 100%;
+        max-width: 100%;
     }
 }
