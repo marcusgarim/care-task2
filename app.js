@@ -65,28 +65,144 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-    // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (e) {
-            e.preventDefault();
+                // Form submission
+            const contactForm = document.querySelector('.contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function (e) {
+                    e.preventDefault();
+                    
+                    // Animação de feedback
+                    const submitBtn = this.querySelector('.btn-submit');
+                    const originalText = submitBtn.textContent;
+                    
+                    submitBtn.textContent = 'Enviando...';
+                    submitBtn.style.opacity = '0.7';
+                    submitBtn.disabled = true;
+                    
+                    try {
+                        // Coletar dados do formulário
+                        const formData = new FormData(this);
+                        const contactData = {
+                            nome: formData.get('nome'),
+                            telefone: formData.get('telefone'),
+                            email: formData.get('email'),
+                            empresa: formData.get('empresa'),
+                            mensagem: formData.get('mensagem')
+                        };
+                        
+                        // Enviar para API
+                        const response = await fetch('http://localhost:3000/api/contact', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify(contactData)
+                        });
+                        
+                        const result = await response.json();
+                        
+                        if (response.ok) {
+                            // Sucesso
+                            showNotification('✅ ' + result.message, 'success');
+                            this.reset();
+                        } else {
+                            // Erro da API
+                            showNotification('❌ ' + (result.error || 'Erro ao enviar contato'), 'error');
+                        }
+                        
+                    } catch (error) {
+                        console.error('Erro ao enviar contato:', error);
+                        showNotification('❌ Erro de conexão. Verifique se o servidor está rodando.', 'error');
+                    } finally {
+                        // Restaurar botão
+                        submitBtn.textContent = originalText;
+                        submitBtn.style.opacity = '1';
+                        submitBtn.disabled = false;
+                    }
+                });
+            }
             
-            // Animação de feedback
-            const submitBtn = this.querySelector('.btn-submit');
-            const originalText = submitBtn.textContent;
+            // Função para mostrar notificações
+            function showNotification(message, type = 'info') {
+                // Remover notificação anterior se existir
+                const existingNotification = document.querySelector('.notification');
+                if (existingNotification) {
+                    existingNotification.remove();
+                }
+                
+                // Criar nova notificação
+                const notification = document.createElement('div');
+                notification.className = `notification notification-${type}`;
+                notification.innerHTML = `
+                    <span>${message}</span>
+                    <button onclick="this.parentElement.remove()">×</button>
+                `;
+                
+                // Adicionar estilos
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    padding: 15px 20px;
+                    border-radius: 8px;
+                    color: white;
+                    font-weight: 500;
+                    z-index: 10000;
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    max-width: 400px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    animation: slideIn 0.3s ease;
+                `;
+                
+                // Cores baseadas no tipo
+                if (type === 'success') {
+                    notification.style.background = '#10b981';
+                } else if (type === 'error') {
+                    notification.style.background = '#ef4444';
+                } else {
+                    notification.style.background = '#3b82f6';
+                }
+                
+                // Botão de fechar
+                const closeBtn = notification.querySelector('button');
+                closeBtn.style.cssText = `
+                    background: none;
+                    border: none;
+                    color: white;
+                    font-size: 18px;
+                    cursor: pointer;
+                    padding: 0;
+                    margin-left: 10px;
+                `;
+                
+                // Adicionar ao DOM
+                document.body.appendChild(notification);
+                
+                // Auto-remover após 5 segundos
+                setTimeout(() => {
+                    if (notification.parentElement) {
+                        notification.remove();
+                    }
+                }, 5000);
+            }
             
-            submitBtn.textContent = 'Enviando...';
-            submitBtn.style.opacity = '0.7';
-            
-            // Simular envio
-            setTimeout(() => {
-                alert('Obrigado pelo contato! Entraremos em contato em breve.');
-                this.reset();
-                submitBtn.textContent = originalText;
-                submitBtn.style.opacity = '1';
-            }, 1000);
-        });
-    }
+            // Adicionar CSS para animação
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes slideIn {
+                    from {
+                        transform: translateX(100%);
+                        opacity: 0;
+                    }
+                    to {
+                        transform: translateX(0);
+                        opacity: 1;
+                    }
+                }
+            `;
+            document.head.appendChild(style);
 
     // Mobile menu toggle
     const menuToggle = document.querySelector('.menu-toggle');

@@ -73,7 +73,7 @@ router.post('/', validateContactData, async (req, res) => {
     });
     
   } catch (error) {
-    console.error('❌ Erro ao processar contato:', error);
+    console.error('Erro ao processar contato:', error);
     
     // Verificar se é erro de duplicação
     if (error.code === '23505') {
@@ -101,7 +101,7 @@ router.get('/', async (req, res) => {
     });
     
   } catch (error) {
-    console.error('❌ Erro ao buscar contatos:', error);
+    console.error('Erro ao buscar contatos:', error);
     res.status(500).json({
       error: 'Erro interno do servidor'
     });
@@ -120,7 +120,7 @@ router.get('/:id', async (req, res) => {
     });
     
   } catch (error) {
-    console.error('❌ Erro ao buscar contato:', error);
+    console.error('Erro ao buscar contato:', error);
     res.status(500).json({
       error: 'Erro interno do servidor'
     });
