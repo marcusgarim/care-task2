@@ -1,18 +1,34 @@
 # Resumo Técnico - Backend Docli
 
-## O que foi implementado
-
-Transformamos um site estático em uma aplicação completa com backend Node.js que salva dados do formulário no PostgreSQL Azure.
-
 ## Arquitetura
 
 ```
 Frontend (HTML/CSS/JS) → Backend (Node.js/Express) → PostgreSQL Azure
 ```
 
+## Estrutura de arquivos
+
+```
+care-task2/
+├── server.js              # Servidor principal (raiz)
+├── database.js            # Configuração PostgreSQL
+├── config.env             # Variáveis de ambiente
+├── package.json           # Dependências
+├── web.config             # Configuração Azure
+├── vercel.json            # Configuração Vercel
+├── start.sh               # Script de inicialização
+├── routes/
+│   └── contact.js         # Rotas da API
+└── frontend/              # Frontend
+    ├── index.html         # Página principal
+    ├── style.css          # Estilos
+    ├── app.js             # JavaScript
+    └── public/            # Assets estáticos
+```
+
 ## Arquivos criados e suas funções
 
-### backend/package.json
+### package.json (raiz)
 Lista as dependências do projeto:
 - `express`: Framework web para criar o servidor
 - `pg`: Driver PostgreSQL para conectar ao banco
@@ -20,7 +36,7 @@ Lista as dependências do projeto:
 - `helmet`: Headers de segurança
 - `express-rate-limit`: Rate limiting para proteção contra spam
 
-### backend/config.env
+### config.env (raiz)
 Variáveis de ambiente com credenciais do banco:
 ```
 PGHOST=general-care-db.postgres.database.azure.com
@@ -30,7 +46,7 @@ PGDATABASE=docli-site
 PGPASSWORD="47=y85Y/u'4J"
 ```
 
-### backend/database.js
+### database.js (raiz)
 Configuração da conexão com PostgreSQL e funções de acesso ao banco:
 
 **Pool de conexões:**
@@ -48,7 +64,7 @@ const pool = new Pool({
 - `insertContact()`: Insere novo contato usando prepared statements
 - `getAllContacts()`: Busca todos os contatos para administração
 
-### backend/server.js
+### server.js (raiz)
 Servidor Express principal com configurações de segurança:
 
 **Middlewares configurados:**
@@ -56,6 +72,11 @@ Servidor Express principal com configurações de segurança:
 - `cors`: Permite requisições do frontend
 - `rateLimit`: Limita 100 requests por IP em 15 minutos
 - `express.json()`: Parse de JSON
+
+**Servir arquivos estáticos:**
+```javascript
+app.use(express.static(path.join(__dirname, 'frontend')));
+```
 
 **Rate limiting específico para contatos:**
 ```javascript
@@ -65,7 +86,7 @@ const contactLimiter = rateLimit({
 });
 ```
 
-### backend/routes/contact.js
+### routes/contact.js
 Rotas da API REST:
 
 **POST /api/contact:**
@@ -86,7 +107,7 @@ if (!nome || nome.trim().length < 2) {
 }
 ```
 
-### app.js (atualizado)
+### frontend/app.js
 JavaScript do frontend modificado para integrar com a API:
 
 **Antes:**
@@ -100,7 +121,7 @@ setTimeout(() => {
 **Depois:**
 ```javascript
 // Envia dados reais para API
-const response = await fetch('http://localhost:3000/api/contact', {
+const response = await fetch('/api/contact', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify(contactData)
@@ -165,26 +186,37 @@ CREATE TABLE contact_submissions (
 
 ```bash
 # Instalar dependências
-cd backend
 npm install
 
 # Iniciar servidor
-npm run dev
-
-# Servidor rodará em http://localhost:3000
+npm start
+# ou
+./start.sh
 ```
+
+## Deploy
+
+### Azure App Service
+- Backend na raiz (conforme exigido pelo Azure)
+- Arquivo `web.config` para configuração IIS
+- Variáveis de ambiente configuradas no portal Azure
+
+### Vercel (alternativo)
+- Configuração em `vercel.json`
+- Rotas para API e frontend
 
 ## Endpoints disponíveis
 
 - `POST /api/contact` - Salva novo contato
 - `GET /api/contact` - Lista todos os contatos
 - `GET /api/health` - Health check do servidor
+- `GET /` - Frontend (index.html)
 
 ## Próximos passos
 
 1. Implementar autenticação para área administrativa
 2. Criar dashboard para visualizar contatos
 3. Adicionar envio de email de confirmação
-4. Configurar deploy no Vercel/Railway
+4. Configurar deploy no Azure App Service
 5. Implementar logs estruturados
 6. Adicionar testes automatizados 

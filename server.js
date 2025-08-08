@@ -80,8 +80,8 @@ app.get('/api/health', (req, res) => {
   });
 });
 
-// Rota para servir arquivos estáticos (opcional)
-app.use(express.static(path.join(__dirname, '../')));
+// Rota para servir arquivos estáticos do frontend
+app.use(express.static(path.join(__dirname, 'frontend')));
 
 // Middleware de tratamento de erros
 app.use((err, req, res, next) => {
